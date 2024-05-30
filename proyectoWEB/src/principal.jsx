@@ -1,39 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
+const NavBar = () => {
 const navbar = {
   position: 'fixed',
-  left: 0,
+  left: '50px',
+      bottom: '150px',
   display: 'flex',
   flexDirection: 'column',
-  height: '100vh',
-  width: '200px',
+  height: '40vh',
+      width: '200px',
   padding: '1rem',
-  backgroundColor: '#333',
+  background: 'rgba(2, 48, 71, 1)',
   color: '#fff',
-  borderRadius: '10px' 
+  borderRadius: '10px',
+
+  zIndex: 1000, // Asegurar que esté por encima de otros elementos
+
 };
 
-
-const navbarLogo = {
-  fontSize: '1.5rem',
-  fontWeight: 'bold',
-  marginBottom: '1rem'
-};
 
 const navbarLinks = {
   listStyle: 'none',
   padding: 0
+  
 };
 
 const navbarLink = {
-  color: '#fff',
-  textDecoration: 'none',
-  fontSize: '1rem',
-  marginBottom: '0.5rem'
+    color: '#fff',
+    fontFamily: 'Century Gothic, sans-serif',
+    fontSize: '2rem', // Tamaño de fuente más grande
+    marginBottom: '2rem', // Mayor separación entre enlaces
+    fontWeight: 'bold',
 };
+
+
+  
 
 const iconStyles = {
   color: 'white',
@@ -43,7 +46,6 @@ const iconStyles = {
   fontSize: '1.5em'
 };
 
-const NavBar = () => {
   return (
     <nav style={navbar}>
       <div>
@@ -60,9 +62,8 @@ const NavBar = () => {
 
       <ul style={navbarLinks}>
         <li><Link to="/home" style={navbarLink}>Home</Link></li>
-        <li><Link to="/about" style={navbarLink}>About</Link></li>
-        <li><Link to="/services" style={navbarLink}>Services</Link></li>
-        <li><Link to="/contact" style={navbarLink}>Contact</Link></li>
+        <li><Link to="/about" style={navbarLink}>CHAMPIONS</Link></li>
+        <li><Link to="/services" style={navbarLink}>SEMIFINAL</Link></li>
       </ul>
     </nav>
   );
@@ -70,23 +71,27 @@ const NavBar = () => {
 
 
 
-const mainContent = {
-  marginLeft: '200px',
-  padding: '2rem'
-};
-
 const AppHOME = () => {
+
+const mainContent = {
+    backgroundColor: 'white', // color de fondo
+    overflow: 'hidden', // ocultar el desbordamiento del contenido
+    minHeight: '100vh', // altura mínima para cubrir toda la pantalla
+    display: 'block',
+    position : 'relative',
+    margin: 0,
+    padding: 0,
+  };
   return (
-    <div>
-      <NavBar />
+    
       <main style={mainContent}>
-        <h1>CHAMPIONS</h1>
-        <p>Contenido </p>
+      <NavBar />
       </main>
-    </div>
+
   );
 };
 
 export default AppHOME;
+
 
 

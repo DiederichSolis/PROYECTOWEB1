@@ -4,7 +4,6 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import AppHOME from './principal'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const App = () => {
   return (
